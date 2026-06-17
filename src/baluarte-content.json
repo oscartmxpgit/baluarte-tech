@@ -1,0 +1,79 @@
+{
+  "legal": {
+    "titular": "Tu Nombre o Razón Social",
+    "nif": "00000000X",
+    "direccion": "Calle Falsa 123, El Provencio, Cuenca",
+    "email": "oscartmxp@gmail.com",
+    "web": "baluarte.tech"
+  },
+  "problem": {
+    "title": "Si tus clientes no te encuentran en Google, estás perdiendo oportunidades cada día",
+    "subtitle": "Cada día, personas de tu zona buscan servicios como los tuyos en Internet. Si tu negocio no aparece, es muy probable que terminen eligiendo a otra empresa, incluso si es de fuera.",
+    "cards": [
+      {
+        "title": "El valor se escapa fuera de tu zona",
+        "description": "Negocios con años de trayectoria están perdiendo clientes frente a empresas de otras ciudades simplemente porque estas tienen mejor presencia en Google Maps y buscadores."
+      },
+      {
+        "title": "Tu negocio no cierra, pero deja de vender",
+        "description": "Una web bien optimizada actúa como un escaparate activo las 24 horas, ayudando a que tus clientes encuentren información, confíen en ti y te contacten más fácilmente."
+      }
+    ]
+  },
+  "services": {
+    "title": "Soluciones tecnológicas adaptadas a tu negocio",
+    "subtitle": "Desarrollo de software y soluciones digitales pensadas para mejorar procesos, aumentar la eficiencia y potenciar la presencia online de tu empresa.",
+    "items": [
+      {
+        "title": "Software empresarial a medida",
+        "description": "Desarrollo de herramientas de gestión, control de inventario, contabilidad y recursos humanos adaptadas a tus necesidades reales.",
+        "icon": "settings"
+      },
+      {
+        "title": "Desarrollo multiplataforma",
+        "description": "Creación de aplicaciones web, de escritorio y sistemas conectados entre sí para centralizar la información de tu negocio.",
+        "icon": "devices"
+      },
+      {
+        "title": "Diseño y desarrollo web",
+        "description": "Sitios web profesionales, rápidos y optimizados para transmitir confianza y convertir visitas en clientes.",
+        "icon": "design"
+      }
+    ]
+  },
+  "products": {
+    "title": "Soluciones digitales listas para usar",
+    "subtitle": "Herramientas prácticas que puedes implementar desde hoy para automatizar procesos, organizar tu negocio y ahorrar tiempo.",
+    "items": []
+  },
+  "portfolio": {
+    "title": "Experiencia en desarrollo de software e ingeniería",
+    "items": [
+      {
+        "title": "Automatización de procesos contables",
+        "description": "Sistema desarrollado con Google Sheets y Apps Script para automatizar la gestión de impuestos y el control de flujo de caja, reduciendo el trabajo manual en un 40%.",
+        "tags": ["Apps Script", "Automatización", "Finanzas"]
+      },
+      {
+        "title": "Sistema de control de inventario (Stock-Flow)",
+        "description": "Diseño de una arquitectura backend para la gestión de almacenes con alertas automáticas y seguimiento en tiempo real del inventario.",
+        "tags": ["Sistemas distribuidos", "Arquitectura de datos"]
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Opiniones de clientes y colaboradores",
+    "items": [
+      {
+        "author": "Empresa local del sector retail",
+        "text": "La solución de gestión financiera de Baluarte ha mejorado notablemente nuestro día a día. Los procesos ahora son más rápidos y fiables.",
+        "rating": 5
+      },
+      {
+        "author": "Colaborador técnico",
+        "text": "La arquitectura del sistema fue muy sólida desde el inicio. Destaca especialmente su enfoque modular y escalable.",
+        "rating": 5
+      }
+    ]
+  }
+}

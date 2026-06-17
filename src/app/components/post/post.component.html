@@ -1,0 +1,18 @@
+<div class="post-wrapper">
+  
+  <article class="post-container" [innerHTML]="htmlContent">
+  </article>
+
+  <nav class="post-navigation">
+    <a [routerLink]="['/blog', prevPost?.slug]" class="nav-item">
+      <span class="nav-label">Anterior</span>
+      <span class="nav-title">{{ prevPost?.title }}</span>
+    </a>
+
+    <a [routerLink]="['/blog', nextPost?.slug]" class="nav-item next">
+      <span class="nav-label">Siguiente</span>
+      <span class="nav-title">{{ nextPost?.title }}</span>
+    </a>
+  </nav>
+
+</div>

@@ -1,0 +1,17 @@
+@if (data) {
+  <section class="problem-section">
+    <div class="container">
+      <h2 class="fade-in"> {{ data.title }}</h2>
+      <p class="subtitle fade-in"> {{ data.subtitle }}</p>
+      
+      <div class="grid-problems">
+        @for (card of data.cards; track card.title) {
+          <div class="card-problem animate-on-scroll">
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

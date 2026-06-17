@@ -1,0 +1,3 @@
+/blog/rentabilidad
+/blog/sheets-backend
+/blog/seo-identidad

@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-brand-title">
+        <app-logo variant="footer"></app-logo>
+      </div>
+      <p class="footer-description">Tu socio tecnológico local en La Mancha. Creamos soluciones web sólidas para hacer
+        crecer los negocios de nuestra comarca.</p>
+
+      <div class="footer-contact">
+        <a [href]="'mailto:' + legalData?.email" class="footer-email">
+          ✉️ {{ legalData?.email }}
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-services">
+      <h3>Nuestros Servicios</h3>
+      <ul class="static-list">
+        <li><span>🚀</span> Diseño Web Profesional</li>
+        <li><span>🗺️</span> Optimización Google Maps</li>
+        <li><span>🤝</span> Socio Tecnológico</li>
+      </ul>
+    </div>
+
+    <div class="footer-blog">
+      <h3>Blog & Estrategia</h3>
+      <ul class="service-list">
+        <li><a [routerLink]="['/blog', 'rentabilidad']"><span>📈</span>Mejorar tu rentabilidad</a></li>
+        <li><a [routerLink]="['/blog', 'sheets-backend']"><span>⚙️</span>Control total de tu negocio con Sheets</a></li>
+        <li><a [routerLink]="['/blog', 'seo-identidad']"><span>🔍</span>Atraer clientes locales</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-zone">
+      <h3>Cobertura</h3>
+      <ul class="clean-list">
+        <li>El Provencio</li>
+        <li>Villarrobledo</li>
+        <li>Comarca y alrededores</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-container">
+      <p>&copy; 2026 BaluArte. Todos los derechos reservados.</p>
+
+      <!-- Seccion Legal Obligatoria para LSSI -->
+      <nav class="footer-legal-nav">
+        <a [routerLink]="['/aviso-legal']">Aviso Legal</a>
+      </nav>
+
+      <p class="footer-legal-text">Garantía de cercanía y confianza local.</p>
+    </div>
+  </div>
+</footer>

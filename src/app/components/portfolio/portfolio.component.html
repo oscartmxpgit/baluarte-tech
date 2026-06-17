@@ -1,0 +1,66 @@
+@if (data) {
+  <section class="portfolio-section">
+    <div class="container">
+      <h2>{{ data.title }}</h2>
+      <p class="subtitle">{{ data.subtitle }}</p>
+      
+      <div class="grid-portfolio">
+        @for (item of data.items; track item.title) {
+          <div class="card-web" [class.card-enterprise]="item.isLocalApp">
+            
+            <div class="web-mockup">
+              @if (item.confidential) {
+                <!-- Mockup sutil de líneas de desarrollo de software (IDE / Código) -->
+                <div class="code-placeholder">
+                  <div class="code-editor-header">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="code-lines">
+                    <div class="line indent-0 w-80"></div>
+                    <div class="line indent-1 w-60"></div>
+                    <div class="line indent-2 w-40"></div>
+                    <div class="line indent-1 w-70"></div>
+                    <div class="line indent-0 w-30"></div>
+                  </div>
+                </div>
+              } @else if (item.image) {
+                <img [src]="item.image" 
+                     [alt]="'Captura de ' + item.title" 
+                     class="screenshot-local"
+                     loading="lazy"
+                     (error)="onImageError($event)">
+              }
+              
+              <div class="mockup-overlay">
+                @if (item.isLocalApp) {
+                  <span class="badge-enterprise">Infraestructura Interna</span>
+                } @else {
+                  <span class="badge-public">Sitio Web</span>
+                }
+              </div>
+            </div>
+            
+            <div class="web-info">
+              <span class="web-category" [class.category-tech]="item.isLocalApp">
+                {{ item.category }}
+              </span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              
+              <div class="web-footer-link">
+                @if (item.isLocalApp) {
+                  <span class="text-enterprise-footer">Entorno privado corporativo</span>
+                } @else {
+                  <a [href]="item.url" target="_blank" rel="noopener noreferrer" class="text-link">
+                    {{ item.url?.replace('https://', '').replace('www.', '') || 'Sitio web' }} ↗
+                  </a>
+                }
+              </div>
+            </div>
+
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

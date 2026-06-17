@@ -1,0 +1,58 @@
+:host { display: block; }
+
+.brand-component {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-family: 'Inter', system-ui, sans-serif;
+  user-select: none;
+  /* Transición suave por si quieres añadir efectos hover más adelante */
+  transition: opacity 0.2s ease;
+}
+
+.brand-component:hover {
+  opacity: 0.9;
+}
+
+.logo-shape { width: 48px; height: 48px; display: block; }
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 0.9; 
+}
+
+/* Texto principal */
+.brand-balu { 
+  font-size: 1.9rem; 
+  font-weight: 800; 
+  letter-spacing: -0.04em; 
+  color: #0f172a; 
+  transition: color 0.3s ease;
+}
+
+.brand-arte {
+  font-size: 1.9rem; 
+  font-weight: 300;
+  background: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ajuste del TECH */
+.brand-tag {
+  display: block; 
+  font-size: 0.55rem; 
+  font-weight: 800; 
+  letter-spacing: 0.35em;
+  color: #64748b; 
+  margin-top: 0; 
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Variante Footer (Fondos oscuros) */
+.footer .brand-balu { color: #ffffff; }
+.footer .brand-tag { color: #94a3b8; } /* Gris más suave y elegante para fondo negro */

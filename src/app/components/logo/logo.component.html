@@ -1,0 +1,31 @@
+<div class="brand-component" [ngClass]="variant">
+  <div class="brand-logo">
+    <svg viewBox="0 0 40 40" class="logo-shape">
+      <defs>
+        <linearGradient id="brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#2563eb" />
+          <stop offset="100%" stop-color="#14b8a6" />
+        </linearGradient>
+      </defs>
+
+      <g stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5">
+        
+        <path d="M 9 35 V 7 H 12 V 10 H 14 V 7 H 17 V 35 Z" 
+              fill="#1e3a8a" stroke="#1e3a8a" />
+        
+        <path d="M 17 9 H 26 L 31 16 L 26 23 H 17 Z" 
+              fill="url(#brand-grad)" stroke="url(#brand-grad)" opacity="0.9" />
+        
+        <path d="M 17 23 H 26 L 31 30 L 26 35 H 17 Z" 
+              fill="#1e3a8a" stroke="#1e3a8a" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="brand-text">
+    <div class="brand-main">
+      <span class="brand-balu">Balu</span><span class="brand-arte">Arte</span>
+    </div>
+    <span class="brand-tag">TECH</span>
+  </div>
+</div>

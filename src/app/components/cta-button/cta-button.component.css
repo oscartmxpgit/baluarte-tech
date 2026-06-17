@@ -1,0 +1,46 @@
+/* Estilos Base */
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Variante Hero (Grande y animada) */
+.btn-primary {
+  background-color: #2563eb; 
+  color: #ffffff; 
+  border: none; 
+  padding: 1rem 2rem;
+  font-size: 1.1rem; 
+  font-weight: 700; 
+  border-radius: 8px; 
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); 
+  animation: pulse-spaced 5s infinite ease-in-out 1.5s;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.02);
+}
+
+/* Variante Navbar (Compacta y limpia) */
+.btn-nav-cta {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 0.5rem 1rem; /* Mucho más pequeño */
+  font-size: 0.9rem;   /* Ajustado para el nav */
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-nav-cta:hover {
+  background-color: #1d4ed8;
+}
+
+/* Animación aislada para el Hero */
+@keyframes pulse-spaced {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}

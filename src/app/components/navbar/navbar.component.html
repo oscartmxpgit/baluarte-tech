@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="brand-wrapper" routerLink="/">
+      <app-logo variant="navbar"></app-logo>
+    </div>
+    <div class="nav-actions">
+      @if (showMenuCta()) {
+        <app-cta-button variant="nav">
+          Diagnóstico gratuito
+        </app-cta-button>
+      }
+    </div>
+  </div>
+</nav>

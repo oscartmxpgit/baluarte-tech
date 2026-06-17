@@ -1,0 +1,14 @@
+@if (isOpen) {
+  <div class="modal-overlay" (click)="cerrar()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close-btn" (click)="cerrar()">&times;</button>
+      
+      <div class="modal-header">
+        <h2>Solicita tu Diagnóstico Local</h2>
+        <p>Déjanos tus datos y nos acercamos a tu negocio para analizar tu presencia en Google sin compromiso.</p>
+      </div>
+
+      <app-contact (formSubmitted)="cerrar()"></app-contact>
+    </div>
+  </div>
+}

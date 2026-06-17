@@ -1,0 +1,47 @@
+.services-section { 
+  padding: 4rem 1.5rem; 
+  background: #ffffff; 
+}
+
+.container-premium { 
+  max-width: 1000px; 
+  margin: 0 auto; 
+}
+
+.header-premium { text-align: center; margin-bottom: 3.5rem; }
+.header-premium h2 { font-size: 2.2rem; color: #0f172a; margin-bottom: 0.5rem; }
+.header-premium p { color: #64748b; font-size: 1.1rem; }
+
+.grid-services-premium { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 2rem; 
+}
+
+/* Efecto Premium: Glassmorphism + Sombra suave */
+.card-premium { 
+  padding: 2rem; 
+  background: #ffffff; 
+  border: 1px solid #e2e8f0;
+  border-radius: 20px; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.15);
+  border-color: #bfdbfe;
+}
+
+.card-premium h3 { font-size: 1.25rem; color: #0f172a; margin: 1.2rem 0; }
+.card-premium p { font-size: 0.95rem; color: #475569; line-height: 1.6; }
+
+/* Icono Premium */
+.icon-wrapper-premium {
+  width: 50px; height: 50px; 
+  background: #eff6ff; color: #2563eb;
+  border-radius: 16px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+}
+.icon-wrapper-premium svg { width: 24px; height: 24px; }

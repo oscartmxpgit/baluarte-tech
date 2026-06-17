@@ -1,0 +1,149 @@
+.footer {
+  background-color: #0f172a;
+  color: #f1f5f9;
+  padding: 4rem 2rem 2rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.brand-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; display: block; }
+.brand-light { color: #3b82f6; }
+.footer-description { color: #94a3b8; font-size: 0.9rem; line-height: 1.6; }
+.footer-link { color: #94a3b8; font-size: 1.2rem; line-height: 1.6; }
+
+.footer h3 {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Listas de Enlaces */
+.service-list { list-style: none; padding: 0; margin: 0; }
+.service-list li { margin-bottom: 0.85rem; }
+.service-list a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.service-list a span {
+  opacity: 0.7;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.service-list a:hover { color: #ffffff; padding-left: 5px; }
+.service-list a:hover span { opacity: 1; transform: translateX(3px); }
+
+/* Lista estática (Cobertura) */
+.clean-list { list-style: none; padding: 0; margin: 0; color: #94a3b8; font-size: 0.9rem; }
+.clean-list li { margin-bottom: 0.85rem; }
+
+.footer-bottom { border-top: 1px solid #1e293b; padding-top: 2rem; text-align: center; }
+.footer-bottom-container { max-width: 1200px; margin: 0 auto; font-size: 0.8rem; color: #64748b; }
+.footer-legal { margin-top: 0.5rem; font-style: italic; }
+
+/* Lista estática para servicios (sin enlaces) */
+.static-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #cbd5e1; /* Color suave pero legible */
+  font-size: 0.9rem;
+}
+
+.static-list li {
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.static-list li span {
+  opacity: 0.7; /* Los iconos ligeramente tenues para que no distraigan */
+  font-size: 0.9rem;
+}
+
+
+/* Ajustes de marca para fondo oscuro */
+.footer-brand-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.brand-title { 
+  font-size: 1.5rem; 
+  font-weight: 800; 
+  color: #ffffff; /* Blanco para destacar */
+  margin-bottom: 0 !important;
+}
+
+.brand-art { 
+  font-weight: 300; 
+  background: linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%); /* Ligeramente más brillante para fondo oscuro */
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+
+/* Estilo del email */
+.footer-contact { margin-top: 1.5rem; }
+
+.footer-email {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+  color: #ffffff;
+}
+
+/* ... (mantén tus estilos anteriores) ... */
+
+.footer-legal-nav {
+  margin: 1rem 0;
+}
+
+.footer-legal-nav a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-legal-nav a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.footer-legal-text { 
+  margin-top: 0.5rem; 
+  font-style: italic; 
+}

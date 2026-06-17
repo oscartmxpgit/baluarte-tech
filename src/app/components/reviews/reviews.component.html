@@ -1,0 +1,19 @@
+@if (data) {
+  <section class="reviews-section">
+    <div class="container">
+      <h2>{{ data.title }}</h2>
+      
+      <div class="grid-reviews">
+        @for (review of data.items; track review.author) {
+          <div class="card-review">
+            <p class="review-text">{{ review.text }}</p>
+            <div class="review-author">
+              <strong>{{ review.author }}</strong>
+              <span>{{ review.role }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

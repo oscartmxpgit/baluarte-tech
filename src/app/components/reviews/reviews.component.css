@@ -1,0 +1,92 @@
+/* --- SECCIÓN DE TESTIMONIOS --- */
+.reviews-section {
+  padding: 6rem 2rem; /* Sincronizado con el padding del portfolio */
+  background-color: #ffffff; /* Contraste perfecto al venir del fondo gris del portfolio */
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2.4rem;
+  color: #0f172a;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.grid-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Sincronizado con el tamaño del grid de proyectos */
+  gap: 2.5rem;
+  margin-top: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- TARJETA DE OPINIÓN REFINADA --- */
+.card-review {
+  padding: 2.5rem 2rem;
+  background-color: #f8fafc; /* Fondo neutro limpio Slate 50 */
+  border-radius: 14px; /* Mismo radio que el portfolio */
+  border: 1px solid #e2e8f0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover interactivo y sutil */
+.card-review:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 20px -8px rgba(15, 23, 42, 0.05);
+}
+
+/* --- DETALLE VISUAL DE COMILLAS --- */
+.review-text {
+  position: relative;
+  font-size: 1rem;
+  font-style: italic;
+  color: #334155; /* Slate 700 para excelente legibilidad */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+/* Comilla decorativa sutil en la esquina superior */
+.review-text::before {
+  content: "“";
+  position: absolute;
+  top: -1rem;
+  left: -0.2rem;
+  font-size: 3.5rem;
+  font-family: serif; /* Fuente clásica para la comilla estilizada */
+  color: #2563eb; /* Azul corporativo que destaca el inicio de la frase */
+  opacity: 0.15;
+  line-height: 1;
+}
+
+/* --- AUTOR Y EMBLEMA DE CONFIANZA --- */
+.review-author {
+  border-top: 1px solid #e2e8f0; /* Línea de separación limpia */
+  padding-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.review-author strong {
+  display: block;
+  color: #0f172a; /* Slate 900 */
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.review-author span {
+  color: #64748b; /* Slate 500 */
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}

@@ -1,0 +1,119 @@
+.logo-container {
+  display: inline-block;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efecto hover interactivo: el isotipo rota levemente */
+.logo-link:hover .logo-icon {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0f172a; /* Slate 900 - Sólido y elegante */
+  letter-spacing: 1px;
+}
+
+.brand-sub {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2563eb; /* Azul Eléctrico - Aporta el toque tecnológico */
+  letter-spacing: 3px;
+  margin-top: 0.1rem;
+}
+
+/* Forzamos el ancho máximo de cualquier imagen dentro del contenedor de posts */
+.post-container img {
+  max-width: 100% !important;
+  width: 100% !important; /* Prueba a quitar esto si la imagen se ve demasiado grande */
+  height: auto !important;
+  display: block !important;
+  margin: 2rem auto !important;
+  border-radius: 8px !important;
+}/* You can add global styles to this file, and also import other style files */
+
+
+/* 1. Tipografía Global y Estructura */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased; /* Suaviza el texto */
+  line-height: 1.7; /* Interlineado generoso para facilitar la lectura */
+  color: #334155;
+  background-color: #ffffff;
+  margin: 0;
+}
+
+/* 2. Estilos para los textos dentro del blog */
+.post-container {
+  font-size: 1.125rem; /* Un poco más grande que el estándar para mayor comodidad */
+}
+
+.post-container h1, 
+.post-container h2, 
+.post-container h3 {
+  color: #0f172a;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.post-container p {
+  margin-bottom: 1.5rem;
+}
+
+/* 3. Listas para que no queden pegadas */
+.post-container ul, 
+.post-container ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.post-container li {
+  margin-bottom: 0.75rem;
+}
+
+/* 4. Imágenes (recordando el ajuste anterior) */
+.post-container img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 2.5rem auto !important;
+  border-radius: 12px; /* Un poco más redondeado para un toque moderno */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Esto hace que el cambio de página sea mucho más suave al ojo */
+body {
+  transition: scroll-behavior 0.5s ease-in-out;
+}
+
+/* Y si usas el ViewportScroller, asegúrate de que el contenedor 
+   no tenga un salto de altura repentino */
+.post-wrapper {
+  min-height: 80vh; /* Evita que el footer salte bruscamente */
+  transition: opacity 0.4s ease-in-out;
+}

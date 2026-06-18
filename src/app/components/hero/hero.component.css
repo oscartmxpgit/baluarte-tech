@@ -1,12 +1,13 @@
 .hero-section {
   position: relative;
-  padding: 4rem 2rem 6rem 2rem;
+  padding: 4rem 2rem 6rem;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
 }
 
+/* GRID BACKGROUND */
 .hero-grid {
   position: absolute;
   inset: 0;
@@ -20,18 +21,22 @@
   z-index: 1;
 }
 
+/* LAYOUT PRINCIPAL */
 .hero-layout-container {
   position: relative;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 4rem;
   align-items: center;
+
   z-index: 2;
 }
 
+/* TEXTO */
 .hero-content {
   text-align: left;
 }
@@ -67,4 +72,183 @@
 .action-note {
   font-size: 0.85rem;
   color: #64748b;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE BREAKPOINTS */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-layout-container {
+    gap: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile landscape / small tablets */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .hero-layout-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    align-items: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+}
+
+/* ========================= */
+/* ✨ ANIMACIONES BASE */
+/* ========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* entrada suave */
+.animate-fade-up {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+.animate-fade-right {
+  animation: fadeRight 1s ease-out both;
+}
+
+/* delay suave para sensación premium */
+.hero-content {
+  animation-delay: 0.1s;
+}
+
+.hero-visual {
+  animation-delay: 0.2s;
+}
+
+/* ========================= */
+/* 🌊 GRID ANIMADO */
+/* ========================= */
+
+.hero-grid {
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+/* ========================= */
+/* 🖼️ IMAGEN FLOTANTE */
+/* ========================= */
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-image-float {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+
+  width: 180px;
+  height: auto;
+
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+  animation: floatImage 6s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .hero-image-float {
+    width: 140px;
+    right: 10px;
+    bottom: -10px;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+  }
 }

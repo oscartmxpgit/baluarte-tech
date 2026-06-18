@@ -8,9 +8,11 @@
         crecer los negocios de nuestra comarca.</p>
 
       <div class="footer-contact">
-        <a [href]="'mailto:' + legalData?.email" class="footer-email">
-          ✉️ {{ legalData?.email }}
+        @if (legalData?.email) {
+        <a [href]="'mailto:' + legalData.email" class="footer-email">
+          {{ legalData.email }}
         </a>
+        }
       </div>
     </div>
 

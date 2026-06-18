@@ -15,7 +15,6 @@ import { CtaButtonComponent } from '../cta-button/cta-button.component';
 export class NavbarComponent {
   private uiService = inject(UiService);
 
-  // Convertimos el BehaviorSubject directamente en una Signal reactiva y nativa.
-  // El segundo parámetro establece el valor inicial de seguridad en false.
+  // Mantenemos la señal reactiva
   public showMenuCta = toSignal(this.uiService.showCta$, { initialValue: false });
 }

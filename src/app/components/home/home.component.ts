@@ -4,6 +4,7 @@ import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ProblemComponent } from '../problem/problem.component';
 import { ReviewsComponent } from '../reviews/reviews.component';
 import { ServicesComponent } from '../services/services.component';
+import { ProcessFlowComponent } from '../process-flow/process-flow.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,7 +13,8 @@ import { ServicesComponent } from '../services/services.component';
     ProblemComponent,
     ServicesComponent,
     PortfolioComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    ProcessFlowComponent
   ],
   templateUrl: './home.component.html'
 })

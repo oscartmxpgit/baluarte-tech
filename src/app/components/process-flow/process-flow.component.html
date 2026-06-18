@@ -1,0 +1,56 @@
+<section class="process-section" ngSkipHydration>
+
+  <div class="section-header">
+    <span class="badge">
+      Cómo trabajamos
+    </span>
+
+    <h2>
+      El proceso Baluarte
+    </h2>
+
+    <p>
+      Un proceso simple, transparente y orientado a resultados.
+    </p>
+  </div>
+
+  <div class="timeline">
+
+    <div
+      class="timeline-item"
+      *ngFor="let step of steps; let i = index">
+
+      <div class="timeline-marker">
+
+        <div class="marker-circle">
+          {{ i + 1 }}
+        </div>
+
+        <div
+          class="connector"
+          *ngIf="i !== steps.length - 1">
+        </div>
+
+      </div>
+
+      <mat-card class="timeline-card">
+
+        <div class="step-number">
+          Paso {{ i + 1 }}
+        </div>
+
+        <h3>
+          {{ step.title }}
+        </h3>
+
+        <p>
+          {{ step.desc }}
+        </p>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</section>

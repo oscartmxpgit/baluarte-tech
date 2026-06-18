@@ -9,11 +9,12 @@ export class UiService {
   private showCtaSource = new BehaviorSubject<boolean>(false);
   public showCta$ = this.showCtaSource.asObservable();
 
-  public abrirContacto(): void { 
-    this.openModalSource.next(); 
+  public abrirContacto(): void {
+    this.openModalSource.next();
   }
 
-  public actualizarCta(mostrar: boolean): void { 
-    this.showCtaSource.next(mostrar); 
-  } 
+  // En ui.service.ts
+  public actualizarCta(mostrar: boolean): void {
+    this.showCtaSource.next(mostrar);
+  }
 }

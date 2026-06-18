@@ -182,3 +182,40 @@
     font-size: 0.95rem;
   }
 }
+
+.hero-layout-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+
+  z-index: 2;
+
+  /* 🔥 CLAVE */
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .hero-layout-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  /* 🔥 IMPORTANTE: evita overflow del dashboard */
+  app-hero-dashboard,
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}

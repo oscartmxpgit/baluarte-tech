@@ -12,7 +12,6 @@ import { ProcessFlowComponent } from '../process-flow/process-flow.component';
     HeroComponent,
     ProblemComponent,
     ServicesComponent,
-    PortfolioComponent,
     ReviewsComponent,
     ProcessFlowComponent
   ],

@@ -3,11 +3,12 @@ import { Component, AfterViewInit, ElementRef, ViewChild, inject, ChangeDetector
 import { isPlatformBrowser } from '@angular/common';
 import { UiService } from '../../services/ui.service';
 import { CtaButtonComponent } from '../cta-button/cta-button.component';
+import { HeroDashboardComponent } from '../hero-dashboard/hero-dashboard.component';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CtaButtonComponent],
+  imports: [CtaButtonComponent, HeroDashboardComponent],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })

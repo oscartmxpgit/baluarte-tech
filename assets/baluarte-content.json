@@ -1,0 +1,92 @@
+{
+  "legal": {
+    "titular": "Tu Nombre o Raz\u00f3n Social",
+    "nif": "00000000X",
+    "direccion": "Calle Falsa 123, El Provencio, Cuenca",
+    "email": "oscartmxp@gmail.com",
+    "web": "baluarte.tech"
+  },
+  "problem": {
+    "title": "Consigue m\u00e1s clientes apareciendo en Google",
+    "subtitle": "Cada d\u00eda, gente de tu zona busca en internet servicios como el tuyo. Si no apareces, tu competencia gana esas ventas, incluso desde otra ciudad.",
+    "cards": [
+      {
+        "title": "Tu negocio invisible = clientes perdidos",
+        "description": "Negocios con a\u00f1os de trayectoria pierden clientes ante empresas de otras ciudades porque no tienen presencia en Google Maps y buscadores."
+      },
+      {
+        "title": "Tu tienda nunca cierra, pero s\u00ed vende",
+        "description": "Una web optimizada es como un escaparate abierto 24 horas: informa a tus clientes, genera confianza y recibe contactos aun cuando tu local f\u00edsico est\u00e9 cerrado."
+      }
+    ]
+  },
+  "services": {
+    "title": "Soluciones digitales que resuelven tus necesidades",
+    "subtitle": "Herramientas simples y modernas para automatizar tareas, ahorrar tiempo y potenciar tus ventas online.",
+    "items": [
+      {
+        "title": "Sistemas a tu medida",
+        "description": "Creamos herramientas personalizadas (gesti\u00f3n de inventario, finanzas, RRHH, etc.) para automatizar tu trabajo diario y reducir errores.",
+        "icon": "settings"
+      },
+      {
+        "title": "Todo tu negocio conectado",
+        "description": "Aplicaciones web y de escritorio integradas entre s\u00ed para que los datos fluyan en tiempo real y tengas control total sin esfuerzo.",
+        "icon": "devices"
+      },
+      {
+        "title": "Web profesional que vende",
+        "description": "Sitios web r\u00e1pidos y atractivos, optimizados para Google, que transmiten confianza y convierten visitas en nuevos clientes.",
+        "icon": "design"
+      }
+    ]
+  },
+  "products": {
+    "title": "Soluciones digitales listas para usar",
+    "subtitle": "Herramientas pr\u00e1cticas que puedes implementar hoy mismo para organizar tu negocio y ahorrar tiempo.",
+    "items": [
+      {
+        "title": "Web Local B\u00e1sica",
+        "description": "Tu negocio en internet con p\u00e1gina web profesional y perfil en Google My Business optimizado (alta en Google Maps incluida)."
+      },
+      {
+        "title": "Kit de Automatizaci\u00f3n",
+        "description": "Plantillas y scripts listos en Google Sheets que automatizan tareas frecuentes: facturas, pedidos, informes mensuales, etc."
+      },
+      {
+        "title": "SEO Local Express",
+        "description": "Optimizaci\u00f3n r\u00e1pida de tu ficha de Google para aparecer en las primeras posiciones cuando los clientes locales busquen tus servicios."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Casos pr\u00e1cticos de transformaci\u00f3n digital",
+    "items": [
+      {
+        "title": "Automatizaci\u00f3n de gesti\u00f3n financiera",
+        "description": "Sistema con Google Sheets y Apps Script que automatiza impuestos y flujo de caja; redujo 40% el trabajo manual en contabilidad.",
+        "tags": ["Apps Script", "Automatizaci\u00f3n", "Finanzas"]
+      },
+      {
+        "title": "Control de inventario (Stock-Flow)",
+        "description": "Arquitectura de software para gesti\u00f3n de almac\u00e9n con alertas autom\u00e1ticas y seguimiento en tiempo real del inventario.",
+        "tags": ["Sistemas distribuidos", "Arquitectura de datos"]
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Opiniones de clientes y colaboradores",
+    "items": [
+      {
+        "author": "Propietario de comercio minorista local",
+        "text": "La herramienta de gesti\u00f3n financiera ha transformado nuestro d\u00eda a d\u00eda: ahora facturamos en 1 hora en vez de 4. Los procesos son m\u00e1s r\u00e1pidos y sin errores.",
+        "rating": 5
+      },
+      {
+        "author": "Colaborador t\u00e9cnico",
+        "text": "El sistema entregado fue muy s\u00f3lido desde el inicio. Destaco especialmente su dise\u00f1o modular y escalable, ideal para futuras mejoras.",
+        "rating": 5
+      }
+    ]
+  }
+}

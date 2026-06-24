@@ -1,0 +1,1 @@
+var t={production:!0,apiBaseUrl:"http://178.105.189.197:3000",baseUrl:"https://baluarte.tech",stripePublicKey:"pk_live_...",stripeSuccessUrl:"https://tu-dominio.com/success",stripePaymentLinkUrl:"",contentGistUrl:"https://gist.githubusercontent.com/oscartmxpgit/7e493167502358088680e858229c5103/raw/baluarte-content.json",supportEmail:"hola@baluarte.tech"};export{t as a};

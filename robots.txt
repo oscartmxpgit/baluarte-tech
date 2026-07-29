@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://baluarte.tech/sitemap.xml
+Sitemap: https://baluarteweb.com/sitemap.xml

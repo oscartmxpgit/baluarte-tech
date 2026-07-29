@@ -21,7 +21,7 @@ export class CtaButtonComponent {
 
   // Teléfono ofuscado para WhatsApp
   private readonly t = '34';
-  private readonly n = '699934588'; // número de WhatsApp Business
+  private readonly n = '699934588'; // número de WhatsApp Business  https://wa.me/34699934588
 
   ngOnInit() {
     this.contentService.getContent().subscribe({

@@ -1,3 +1,13 @@
+/
+/herramientas
+/herramientas/generador-link-whatsapp
+/herramientas/calculadora-roi-automatizacion
+/herramientas/calculadora-comisiones
+/herramientas/generador-qr-wifi
+/herramientas/limpiador-datos-excel
+/herramientas/calculadora-margen-beneficio
 /blog/rentabilidad
 /blog/sheets-backend
 /blog/seo-identidad
+/politica-privacidad
+/aviso-legal

@@ -18,7 +18,26 @@
   align-items: center; 
 }
 
-/* Contenedor del logo (el componente app-logo ya trae sus propios estilos) */
+/* Links del Navbar */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover, .active-link {
+  color: #2563eb;
+}
+
+/* Contenedor del logo */
 .brand-wrapper { 
   cursor: pointer; 
   transition: opacity 0.2s;
@@ -59,12 +78,12 @@
   display: inline-flex;
   align-items: center;
   padding: 8px;
-  color: #334155; /* Slate gris */
+  color: #334155;
   transition: color 0.2s ease;
 }
 
 .cart-btn:hover {
-  color: #3b82f6; /* El azul corporativo de tu tema */
+  color: #3b82f6;
 }
 
 .cart-icon {
@@ -76,7 +95,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #14b8a6; /* El teal/turquesa del gráfico para romper y llamar la atención */
+  background-color: #14b8a6;
   color: white;
   font-size: 0.75rem;
   font-weight: 700;
@@ -90,7 +109,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Un pequeño pulso de animación cuando entra un item */
 .animation-pulse {
   animation: pop 0.3s ease-out;
 }

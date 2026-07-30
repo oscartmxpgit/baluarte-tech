@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarComponent } from './navbar.component';
+import { DataCleanerComponent } from './data-cleaner.component';
 
-describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+describe('DataCleanerComponent', () => {
+  let component: DataCleanerComponent;
+  let fixture: ComponentFixture<DataCleanerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarComponent]
+      imports: [DataCleanerComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavbarComponent);
+    fixture = TestBed.createComponent(DataCleanerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

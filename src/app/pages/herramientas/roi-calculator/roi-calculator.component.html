@@ -1,0 +1,42 @@
+<div class="tool-wrapper">
+  <div class="tool-header">
+    <a routerLink="/herramientas" class="back-link">← Volver a Herramientas</a>
+    <h1>Calculadora de Ahorro y ROI por Automatización</h1>
+    <p>Descubre cuánto dinero y tiempo pierde tu empresa en tareas manuales repetitivas.</p>
+  </div>
+
+  <div class="tool-card">
+    <div class="form-group">
+      <label for="hours">Horas semanales dedicadas a tareas manuales (Excel, presupuestos, mails):</label>
+      <input type="number" id="hours" [(ngModel)]="weeklyHoursSpent" min="1" max="100" />
+    </div>
+
+    <div class="form-group">
+      <label for="rate">Coste estimado por hora de trabajo (€/hora):</label>
+      <input type="number" id="rate" [(ngModel)]="hourlyRate" min="5" max="200" />
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card warning">
+        <span class="metric-value">{{ yearlyHours }} hrs</span>
+        <span class="metric-label">Tiempo perdido al año</span>
+      </div>
+      <div class="metric-card danger">
+        <span class="metric-value">{{ yearlyCost | currency:'EUR':'symbol':'1.0-0' }}</span>
+        <span class="metric-label">Coste económico anual</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="seo-article">
+    <h2>¿Cómo ayuda la automatización a reducir este coste?</h2>
+    <p>
+      Herramientas conectadas como Google Sheets automatizados, CRM a medida o bots de gestión ahorran más del 70% de las horas dedicadas a tareas repetitivas en pequeños negocios.
+    </p>
+    <div class="cta-banner">
+      <h3>Ahorra hasta {{ (yearlyCost * 0.7) | currency:'EUR':'symbol':'1.0-0' }} al año</h3>
+      <p>Analizamos tus procesos actuales de forma totalmente gratuita y te mostramos qué puedes automatizar.</p>
+      <a routerLink="/" class="btn-cta">Solicitar Diagnóstico Gratuito</a>
+    </div>
+  </article>
+</div>

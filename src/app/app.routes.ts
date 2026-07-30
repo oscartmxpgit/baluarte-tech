@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { PostComponent } from './components/post/post.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PostComponent } from './pages/post/post.component';
 
 export const routes: Routes = [
   {
@@ -15,17 +15,17 @@ export const routes: Routes = [
   // Rutas legales con Lazy Loading para optimizar el bundle
   {
     path: 'politica-privacidad',
-    loadComponent: () => import('./components/legal/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent),
+    loadComponent: () => import('./pages/legal/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent),
     title: 'Política de Privacidad | BaluArte'
   },
   {
     path: 'aviso-legal',
-    loadComponent: () => import('./components/legal/legal-notice/legal-notice.component').then(m => m.LegalNoticeComponent),
+    loadComponent: () => import('./pages/legal/legal-notice/legal-notice.component').then(m => m.LegalNoticeComponent),
     title: 'Aviso Legal | BaluArte'
   },
   {
     path: '**',
-    loadComponent: () => import('./components/not-found/not-found.component').then(m => m.NotFoundComponent),
+    loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent),
     title: 'Página no encontrada | Baluarte Tech'
   }
 ];

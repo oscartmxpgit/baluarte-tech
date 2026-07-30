@@ -1,0 +1,90 @@
+<div class="tool-wrapper">
+  <div class="form-container no-print">
+    <a routerLink="/herramientas" class="back-link">← Volver a Herramientas</a>
+    <h1>Generador de Albaranes de Entrega</h1>
+    <p>Emite notas de entrega de material o ejecución de servicios con control de bultos y doble firma de conformidad.</p>
+
+    <div class="card-section">
+      <h3>1. Datos de tu Empresa</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Empresa / Emisor</label><input type="text" [(ngModel)]="issuerName" /></div>
+        <div class="form-group"><label>NIF / CIF</label><input type="text" [(ngModel)]="issuerNif" /></div>
+        <div class="form-group full"><label>Dirección</label><input type="text" [(ngModel)]="issuerAddress" /></div>
+      </div>
+    </div>
+
+    <div class="card-section">
+      <h3>2. Datos de Entrega</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Cliente / Destinatario</label><input type="text" [(ngModel)]="clientName" /></div>
+        <div class="form-group"><label>Lugar de Entrega / Obra</label><input type="text" [(ngModel)]="deliveryAddress" /></div>
+        <div class="form-group"><label>Nº de Albarán</label><input type="text" [(ngModel)]="deliveryNumber" /></div>
+        <div class="form-group"><label>Fecha de Entrega</label><input type="date" [(ngModel)]="deliveryDate" /></div>
+        <div class="form-group"><label>Transportista / Vehículo</label><input type="text" [(ngModel)]="carrier" /></div>
+        <div class="form-group"><label>Número de Bultos</label><input type="number" [(ngModel)]="packagesCount" /></div>
+      </div>
+    </div>
+
+    <div class="card-section">
+      <h3>3. Materiales o Trabajos Entregados</h3>
+      <div class="item-row-input" *ngFor="let item of items; let i = index">
+        <input type="text" [(ngModel)]="item.description" placeholder="Descripción del material / producto" class="desc-input" />
+        <input type="number" [(ngModel)]="item.quantity" placeholder="Cant" min="1" class="qty-input" />
+        <button (click)="removeItem(i)" class="btn-delete" *ngIf="items.length > 1">🗑️</button>
+      </div>
+      <button (click)="addItem()" class="btn-secondary">+ Añadir línea de entrega</button>
+    </div>
+
+    <div class="action-bar">
+      <button (click)="printDocument(printSection)" class="btn-primary">🖨️ Imprimir Albarán para Firmar</button>
+    </div>
+  </div>
+
+  <!-- VISTA DE IMPRESIÓN OFICIAL -->
+  <div #printSection class="official-print-document">
+    <div class="doc-header">
+      <div class="issuer-block">
+        <h2>{{ issuerName || 'Tu Empresa' }}</h2>
+        <p><strong>NIF:</strong> {{ issuerNif || '00000000X' }}</p>
+        <p>{{ issuerAddress }}</p>
+      </div>
+      <div class="meta-block">
+        <h1>ALBARÁN DE ENTREGA</h1>
+        <p><strong>Nº:</strong> {{ deliveryNumber }}</p>
+        <p><strong>Fecha:</strong> {{ deliveryDate }}</p>
+        <p><strong>Bultos:</strong> {{ packagesCount }}</p>
+      </div>
+    </div>
+
+    <div class="client-invoice-box">
+      <h4>DESTINATARIO / LUGAR DE ENTREGA:</h4>
+      <p><strong>{{ clientName || 'Cliente' }}</strong></p>
+      <p><strong>Dirección:</strong> {{ deliveryAddress || 'Misma que dirección fiscal' }}</p>
+      <p><strong>Transporte:</strong> {{ carrier || 'Propio / Agencia' }}</p>
+    </div>
+
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th>Descripción del Material / Suministro</th>
+          <th class="text-center" style="width: 100px;">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.description || 'Sin descripción' }}</td>
+          <td class="text-center"><strong>{{ item.quantity }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 2rem; font-size: 0.85rem; color: #475569; background: #f8fafc; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; -webkit-print-color-adjust: exact;">
+      <p><strong>Observaciones:</strong> Las mercancías viajan por cuenta del cliente. Compruebe el número de bultos y el estado de los materiales en el momento de la recepción.</p>
+    </div>
+
+    <div class="signature-section" style="margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+      <div class="sig-box"><p>Entregado (Firma y Sello)</p><div style="border-top: 1px solid #94a3b8; margin-top: 3.5rem;"></div></div>
+      <div class="sig-box"><p>Recibido / Conforme (Cliente)</p><div style="border-top: 1px solid #94a3b8; margin-top: 3.5rem;"></div></div>
+    </div>
+  </div>
+</div>

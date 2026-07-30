@@ -1,0 +1,78 @@
+<div class="tool-wrapper">
+  <div class="tool-header">
+    <a routerLink="/herramientas" class="back-link">← Volver a Herramientas</a>
+    <h1>Calculadora de IVA e IRPF</h1>
+    <p>Desglosa al instante la base imponible, el IVA y las retenciones de IRPF para tus facturas y presupuestos.</p>
+  </div>
+
+  <div class="tool-card">
+    <div class="form-group">
+      <label for="amount">Importe (€):</label>
+      <input
+        type="number"
+        id="amount"
+        [(ngModel)]="amount"
+        (input)="calculate()"
+        min="0.01"
+        step="1"
+        placeholder="Ej: 1000"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="amountType">Tipo de Importe:</label>
+      <select id="amountType" [(ngModel)]="amountType" (change)="calculate()">
+        <option value="base">Es Base Imponible (Sin impuestos)</option>
+        <option value="total">Es Importe Total (Con IVA incluido)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="ivaRate">Tipo de IVA (%):</label>
+      <select id="ivaRate" [(ngModel)]="ivaRate" (change)="calculate()">
+        <option [value]="21">21% (General)</option>
+        <option [value]="10">10% (Reducido)</option>
+        <option [value]="4">4% (Superreducido)</option>
+        <option [value]="0">0% (Exento)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="irpfRate">Retención IRPF (%):</label>
+      <select id="irpfRate" [(ngModel)]="irpfRate" (change)="calculate()">
+        <option [value]="15">15% (Profesionales / General)</option>
+        <option [value]="7">7% (Nuevos Autónomos)</option>
+        <option [value]="0">0% (Sin retención)</option>
+      </select>
+    </div>
+
+    <div class="results-container">
+      <div class="res-item">
+        <span>Base Imponible:</span>
+        <strong>{{ baseAmount | currency:'EUR':'symbol':'1.2-2' }}</strong>
+      </div>
+      <div class="res-item">
+        <span>Cuota IVA:</span>
+        <strong class="fee-text">{{ ivaAmount | currency:'EUR':'symbol':'1.2-2' }}</strong>
+      </div>
+      <div class="res-item">
+        <span>Retención IRPF:</span>
+        <strong>- {{ irpfAmount | currency:'EUR':'symbol':'1.2-2' }}</strong>
+      </div>
+      <div class="res-item total">
+        <span>Total a Cobrar / Pagar:</span>
+        <strong class="net-text">{{ totalAmount | currency:'EUR':'symbol':'1.2-2' }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <article class="seo-article">
+    <h2>¿Necesitas automatizar tu facturación y contabilidad?</h2>
+    <p>Integramos sistemas de facturación automática y generación de impuestos para ahorrar horas de gestió a tu PYME.</p>
+    <div class="cta-banner">
+      <app-cta-button whatsappMessage="Hola, me interesa automatizar la emisión de facturas y control fiscal de mi negocio.">
+        Solicitar Diagnóstico Gratuito
+      </app-cta-button>
+    </div>
+  </article>
+</div>

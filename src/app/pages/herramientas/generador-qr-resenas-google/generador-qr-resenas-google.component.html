@@ -1,0 +1,33 @@
+<div class="tool-wrapper">
+  <div class="form-container no-print">
+    <a routerLink="/herramientas" class="back-link">← Volver a Herramientas</a>
+    <h1>Cartel QR para Reseñas de Google Maps</h1>
+    <p>Crea un cartel elegante para colocar en el mostrador o mesas de tu local e impulsar tus valoraciones positivas.</p>
+
+    <div class="card-section">
+      <h3>Datos de tu Negocio</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Nombre del Local</label><input type="text" [(ngModel)]="businessName" /></div>
+        <div class="form-group"><label>Enlace Directo de Reseña (Google Maps URL)</label><input type="text" [(ngModel)]="googleReviewUrl" /></div>
+        <div class="form-group full"><label>Llamada a la acción (Texto)</label><input type="text" [(ngModel)]="callToAction" /></div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <button (click)="printDocument(printSection)" class="btn-primary">🖨️ Imprimir Cartel QR para Mostrador</button>
+    </div>
+  </div>
+
+  <!-- VISTA DE IMPRESIÓN OFICIAL (Cartel Mostrador QR) -->
+  <div #printSection class="official-print-document qr-card-box">
+    <h2 class="qr-title">⭐ ¡Valora tu experiencia!</h2>
+    <p class="qr-subtitle">{{ callToAction }}</p>
+
+    <div class="qr-img-wrapper">
+      <img [src]="'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeUrl(googleReviewUrl)" alt="QR Reseñas Google" class="qr-img" />
+    </div>
+
+    <h3 class="qr-biz">{{ businessName || 'Tu Negocio' }}</h3>
+    <p class="qr-thanks">¡Muchas gracias por tu apoyo y confianza!</p>
+  </div>
+</div>

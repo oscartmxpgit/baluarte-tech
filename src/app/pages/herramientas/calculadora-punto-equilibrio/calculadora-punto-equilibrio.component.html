@@ -1,0 +1,51 @@
+<div class="tool-wrapper">
+  <div class="tool-header">
+    <a routerLink="/herramientas" class="back-link">← Volver a Herramientas</a>
+    <h1>Calculadora de Punto de Equilibrio</h1>
+    <p>Calcula la facturación mínima y unidades que necesitas vender al mes para cubrir tus gastos fijos y no perder dinero.</p>
+  </div>
+
+  <div class="tool-card">
+    <div class="form-group">
+      <label for="fixedCosts">Costes Fijos Mensuales (€):</label>
+      <input type="number" id="fixedCosts" [(ngModel)]="fixedCosts" (input)="calculate()" min="0" step="100" placeholder="Ej: 2000" />
+      <small style="display:block; color:#64748b; margin-top:4px;">Alquiler, suministros, nómadas, software, gestoría, etc.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="salePriceUnit">Precio de Venta por Unidad / Servicio (€):</label>
+      <input type="number" id="salePriceUnit" [(ngModel)]="salePriceUnit" (input)="calculate()" min="0.01" step="1" placeholder="Ej: 100" />
+    </div>
+
+    <div class="form-group">
+      <label for="variableCostUnit">Coste Variable por Unidad (€):</label>
+      <input type="number" id="variableCostUnit" [(ngModel)]="variableCostUnit" (input)="calculate()" min="0" step="1" placeholder="Ej: 30" />
+      <small style="display:block; color:#64748b; margin-top:4px;">Materia prima, envíos, comisiones de venta directas.</small>
+    </div>
+
+    <div class="results-container">
+      <div class="res-item">
+        <span>Margen Unitario de Contribución:</span>
+        <strong>{{ unitMargin | currency:'EUR':'symbol':'1.2-2' }}</strong>
+      </div>
+      <div class="res-item">
+        <span>Unidades Necesarias al Mes:</span>
+        <strong class="fee-text">{{ unitsNeeded }} uds</strong>
+      </div>
+      <div class="res-item total">
+        <span>Facturación Mínima de Equilibrio:</span>
+        <strong class="net-text">{{ revenueNeeded | currency:'EUR':'symbol':'1.2-2' }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <article class="seo-article">
+    <h2>Asegura la rentabilidad económica de tu empresa</h2>
+    <p>Realizamos diagnósticos de costes y construimos paneles de control financiero adaptados a tu negocio.</p>
+    <div class="cta-banner">
+      <app-cta-button whatsappMessage="Hola, me gustaría analizar la estructura de costes y rentabilidad de mi negocio.">
+        Solicitar Diagnóstico Gratuito
+      </app-cta-button>
+    </div>
+  </article>
+</div>

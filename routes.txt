@@ -6,6 +6,15 @@
 /herramientas/generador-qr-wifi
 /herramientas/limpiador-datos-excel
 /herramientas/calculadora-margen-beneficio
+/herramientas/generador-facturas-express
+/herramientas/generador-presupuestos-express
+/herramientas/generador-albaranes-express
+/herramientas/generador-registro-horario
+/herramientas/generador-carteles-horarios
+/herramientas/generador-qr-resenas-google
+/herramientas/calculadora-iva-irpf
+/herramientas/calculadora-punto-equilibrio
+/herramientas/calculadora-tarifa-hora
 /blog/rentabilidad
 /blog/sheets-backend
 /blog/seo-identidad

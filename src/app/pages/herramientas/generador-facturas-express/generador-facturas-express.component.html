@@ -1,0 +1,110 @@
+<div class="tool-wrapper">
+  <div class="form-container no-print">
+    <a routerLink="/herramientas" class="back-link">← Volver a Herramientas</a>
+    <h1>Generador de Facturas Profesional</h1>
+    <p>Crea facturas comerciales completas con datos fiscales, desglose de IVA/IRPF y líneas de concepto editables.</p>
+
+    <div class="card-section">
+      <h3>1. Datos de tu Empresa (Emisor)</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Nombre / Razón Social</label><input type="text" [(ngModel)]="issuerName" /></div>
+        <div class="form-group"><label>NIF / CIF</label><input type="text" [(ngModel)]="issuerNif" /></div>
+        <div class="form-group full"><label>Dirección Fiscal</label><input type="text" [(ngModel)]="issuerAddress" /></div>
+        <div class="form-group"><label>Email</label><input type="email" [(ngModel)]="issuerEmail" /></div>
+        <div class="form-group"><label>Teléfono</label><input type="text" [(ngModel)]="issuerPhone" /></div>
+      </div>
+    </div>
+
+    <div class="card-section">
+      <h3>2. Datos del Cliente y Factura</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Cliente / Empresa</label><input type="text" [(ngModel)]="clientName" /></div>
+        <div class="form-group"><label>NIF / CIF Cliente</label><input type="text" [(ngModel)]="clientNif" /></div>
+        <div class="form-group full"><label>Dirección del Cliente</label><input type="text" [(ngModel)]="clientAddress" /></div>
+        <div class="form-group"><label>Número de Factura</label><input type="text" [(ngModel)]="invoiceNumber" /></div>
+        <div class="form-group"><label>Fecha de Emisión</label><input type="date" [(ngModel)]="invoiceDate" /></div>
+        <div class="form-group"><label>Fecha de Vencimiento</label><input type="date" [(ngModel)]="dueDate" /></div>
+        <div class="form-group"><label>Método de Pago</label><input type="text" [(ngModel)]="paymentMethod" /></div>
+      </div>
+    </div>
+
+    <div class="card-section">
+      <h3>3. Conceptos / Líneas de Factura</h3>
+      <div class="item-row-input" *ngFor="let item of items; let i = index">
+        <input type="text" [(ngModel)]="item.description" placeholder="Descripción del servicio o producto" class="desc-input" />
+        <input type="number" [(ngModel)]="item.quantity" placeholder="Cant" min="1" class="qty-input" />
+        <input type="number" [(ngModel)]="item.price" placeholder="Precio (€)" step="0.01" class="price-input" />
+        <button (click)="removeItem(i)" class="btn-delete" *ngIf="items.length > 1">🗑️</button>
+      </div>
+      <button (click)="addItem()" class="btn-secondary">+ Añadir otra línea</button>
+    </div>
+
+    <div class="card-section">
+      <h3>4. Impuestos aplicables</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>IVA (%)</label><input type="number" [(ngModel)]="vatRate" /></div>
+        <div class="form-group"><label>Retención IRPF (%)</label><input type="number" [(ngModel)]="irpfRate" /></div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <button (click)="printDocument(printSection)" class="btn-primary">🖨️ Generar Factura Oficial en PDF</button>
+    </div>
+  </div>
+
+  <!-- VISTA DE IMPRESIÓN OFICIAL -->
+  <div #printSection class="official-print-document">
+    <div class="doc-header">
+      <div class="issuer-block">
+        <h2>{{ issuerName || 'Tu Empresa / Nombre' }}</h2>
+        <p><strong>NIF/CIF:</strong> {{ issuerNif || '00000000X' }}</p>
+        <p>{{ issuerAddress || 'Dirección fiscal de tu negocio' }}</p>
+        <p>{{ issuerEmail || 'correo@empresa.com' }} | {{ issuerPhone || 'Teléfono' }}</p>
+      </div>
+      <div class="meta-block">
+        <h1>FACTURA</h1>
+        <p><strong>Nº Factura:</strong> {{ invoiceNumber }}</p>
+        <p><strong>Fecha Emisión:</strong> {{ invoiceDate }}</p>
+        <p><strong>Vencimiento:</strong> {{ dueDate }}</p>
+      </div>
+    </div>
+
+    <div class="client-invoice-box">
+      <h4>DATOS DEL CLIENTE:</h4>
+      <p><strong>{{ clientName || 'Nombre del Cliente' }}</strong> (NIF: {{ clientNif || 'N/A' }})</p>
+      <p>{{ clientAddress || 'Dirección del cliente' }}</p>
+    </div>
+
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th>Descripción del concepto</th>
+          <th class="text-center">Cant.</th>
+          <th class="text-right">Precio Ud.</th>
+          <th class="text-right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.description || 'Concepto sin especificar' }}</td>
+          <td class="text-center">{{ item.quantity }}</td>
+          <td class="text-right">{{ item.price | number:'1.2-2' }} €</td>
+          <td class="text-right">{{ (item.quantity * item.price) | number:'1.2-2' }} €</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="totals-container">
+      <div class="payment-info">
+        <p><strong>Forma de pago:</strong> {{ paymentMethod }}</p>
+        <p class="legal-note">Factura emitida de acuerdo con la normativa fiscal vigente.</p>
+      </div>
+      <div class="totals-box">
+        <div class="row"><span>Subtotal:</span> <span>{{ calculateSubtotal() | number:'1.2-2' }} €</span></div>
+        <div class="row" *ngIf="vatRate > 0"><span>IVA ({{ vatRate }}%):</span> <span>{{ calculateVat() | number:'1.2-2' }} €</span></div>
+        <div class="row" *ngIf="irpfRate > 0"><span>IRPF ({{ irpfRate }}%):</span> <span>-{{ calculateIrpf() | number:'1.2-2' }} €</span></div>
+        <div class="row final"><span>TOTAL A PAGAR:</span> <span>{{ calculateTotal() | number:'1.2-2' }} €</span></div>
+      </div>
+    </div>
+  </div>
+</div>

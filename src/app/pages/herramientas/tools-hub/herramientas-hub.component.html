@@ -1,0 +1,73 @@
+<div class="hub-container">
+  <div class="hub-header">
+    <h1>Herramientas Gratuitas para PYMEs y Comercios</h1>
+    <p>Soluciones rápidas y sin registros para optimizar la gestión diaria de tu negocio local.</p>
+  </div>
+
+  <!-- Barra de Filtros y Buscador Moderno -->
+  <div class="hub-controls">
+    <div class="category-filters">
+      <button 
+        [class.active]="selectedCategory === 'all'" 
+        (click)="setCategory('all')" 
+        class="filter-btn">
+        ✨ Todas
+      </button>
+      <button 
+        [class.active]="selectedCategory === 'documentos'" 
+        (click)="setCategory('documentos')" 
+        class="filter-btn">
+        📄 Documentos & PDF
+      </button>
+      <button 
+        [class.active]="selectedCategory === 'finanzas'" 
+        (click)="setCategory('finanzas')" 
+        class="filter-btn">
+        💰 Finanzas & Precios
+      </button>
+      <button 
+        [class.active]="selectedCategory === 'marketing'" 
+        (click)="setCategory('marketing')" 
+        class="filter-btn">
+        📢 Marketing & QR
+      </button>
+      <button 
+        [class.active]="selectedCategory === 'productividad'" 
+        (click)="setCategory('productividad')" 
+        class="filter-btn">
+        ⚡ Productividad
+      </button>
+    </div>
+
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input 
+        type="text" 
+        [(ngModel)]="searchQuery" 
+        placeholder="Buscar herramienta (ej. facturas, IVA, albaranes...)" 
+        class="search-input" />
+    </div>
+  </div>
+
+  <!-- Grid Dinámico de Herramientas -->
+  <div class="tools-grid" *ngIf="filteredTools.length > 0; else noResults">
+    <div class="tool-card" *ngFor="let tool of filteredTools">
+      <div class="icon">{{ tool.icon }}</div>
+      <h2>{{ tool.title }}</h2>
+      <p>{{ tool.description }}</p>
+      <a [routerLink]="tool.route" class="btn-tool">Usar Herramienta →</a>
+    </div>
+  </div>
+
+  <!-- Estado sin resultados -->
+  <ng-template #noResults>
+    <div class="no-results-card">
+      <span class="no-results-icon">🔍</span>
+      <h3>No se han encontrado herramientas</h3>
+      <p>Prueba con otros términos de búsqueda o selecciona otra categoría.</p>
+      <button (click)="selectedCategory = 'all'; searchQuery = ''" class="btn-reset">
+        Ver todas las herramientas
+      </button>
+    </div>
+  </ng-template>
+</div>

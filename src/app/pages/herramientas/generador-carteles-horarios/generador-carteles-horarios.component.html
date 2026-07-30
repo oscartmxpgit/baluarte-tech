@@ -1,0 +1,38 @@
+<div class="tool-wrapper">
+  <div class="form-container no-print">
+    <a routerLink="/herramientas" class="back-link">← Volver a Herramientas</a>
+    <h1>Carteles de Horarios y Avisos</h1>
+    <p>Diseña avisos limpios y profesionales para la puerta de tu local (vacaciones, cambios de horario, festivos).</p>
+
+    <div class="card-section">
+      <h3>Configuración del Cartel</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Tipo de Cartel / Título</label><input type="text" [(ngModel)]="posterTitle" /></div>
+        <div class="form-group"><label>Emoji / Icono principal</label><input type="text" [(ngModel)]="posterEmoji" /></div>
+        <div class="form-group full"><label>Mensaje Principal / Fechas</label><textarea [(ngModel)]="posterMessage" rows="3"></textarea></div>
+        <div class="form-group"><label>Nombre del Establecimiento</label><input type="text" [(ngModel)]="businessName" /></div>
+        <div class="form-group"><label>Fecha de Reapertura / Info extra</label><input type="text" [(ngModel)]="extraInfo" /></div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <button (click)="printDocument(printSection)" class="btn-primary">🖨️ Imprimir Cartel en A4</button>
+    </div>
+  </div>
+
+  <!-- VISTA DE IMPRESIÓN OFICIAL (Cartel A4 Impactante) -->
+  <div #printSection class="official-print-document cartel-a4-box">
+    <div>
+      <div class="cartel-emoji">{{ posterEmoji || '📢' }}</div>
+      <h1 class="cartel-title">{{ posterTitle || 'AVISO IMPORTANTE' }}</h1>
+      <div class="cartel-msg">
+        {{ posterMessage || 'Escribe aquí el mensaje detallado para tus clientes...' }}
+      </div>
+    </div>
+
+    <div class="cartel-footer">
+      <h2 class="cartel-biz">{{ businessName || 'Tu Negocio' }}</h2>
+      <p class="cartel-extra">{{ extraInfo || '¡Disculpen las molestias!' }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.tool-wrapper { max-width: 900px; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; color: #1e293b; }
+.form-container { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+.card-section { margin-bottom: 2rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1.5rem; }
+.card-section h3 { font-size: 1.1rem; color: #0f172a; margin-bottom: 1rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; }
+.form-group.full { grid-column: span 2; }
+.form-group label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; color: #475569; }
+.form-group input { padding: 0.65rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; font-family: inherit; }
+.action-bar { text-align: center; margin-top: 2rem; }
+.btn-primary { background: #2563eb; color: #fff; border: none; padding: 0.85rem 2rem; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+
+.official-print-document { display: none; }
+.print-wrapper .official-print-document { display: block !important; }
+
+/* Estilos del cartel QR impreso */
+.qr-card-box {
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 4px solid #2563eb;
+  border-radius: 16px;
+  max-width: 450px;
+  margin: 0 auto;
+  background: #fff;
+}
+.qr-title { font-size: 1.8rem; color: #0f172a; margin-bottom: 0.5rem; font-weight: 800; }
+.qr-subtitle { font-size: 1.1rem; color: #475569; margin-bottom: 2rem; }
+.qr-img-wrapper { margin: 1.5rem 0; display: inline-block; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; background: #f8fafc; -webkit-print-color-adjust: exact; }
+.qr-img { width: 220px; height: 220px; display: block; }
+.qr-biz { font-size: 1.4rem; color: #2563eb; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 700; }
+.qr-thanks { font-size: 0.9rem; color: #64748b; }
+.back-link { display: inline-block; color: #2563eb; text-decoration: none; font-weight: 500; margin-bottom: 1rem; }

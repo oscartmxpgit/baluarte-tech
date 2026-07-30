@@ -6,7 +6,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Baluarte Tech | Soluciones Digitales y Desarrollo de Software'
+    title: 'BaluArte Tech | Diseño Web y Automatizaciones en Villarrobledo'
   },
   {
     path: 'blog/:slug',

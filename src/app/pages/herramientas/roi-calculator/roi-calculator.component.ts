@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
+import { CtaButtonComponent } from '../../cta-button/cta-button.component';
 
 @Component({
   selector: 'app-roi-calculator',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, CtaButtonComponent],
   templateUrl: './roi-calculator.component.html',
   styleUrls: ['./roi-calculator.component.css']
 })

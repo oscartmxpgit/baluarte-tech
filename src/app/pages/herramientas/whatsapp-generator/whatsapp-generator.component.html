@@ -8,48 +8,41 @@
   <div class="tool-card">
     <div class="form-group">
       <label for="phone">Teléfono de tu negocio (incluye prefijo, ej. 34 para España)</label>
-      <input
-        type="text"
-        id="phone"
-        [(ngModel)]="phoneNumber"
-        placeholder="Ej: 34600123456"
-        (input)="generateLink()"
-      />
+      <input type="text" id="phone" [(ngModel)]="phoneNumber" placeholder="Ej: 34600123456" (input)="generateLink()" />
     </div>
 
     <div class="form-group">
       <label for="message">Mensaje inicial prediseñado (Opcional)</label>
-      <textarea
-        id="message"
-        id="message"
-        [(ngModel)]="customMessage"
-        placeholder="Ej: Hola, me gustaría solicitar un presupuesto..."
-        (input)="generateLink()"
-      ></textarea>
+      <textarea id="message" id="message" [(ngModel)]="customMessage"
+        placeholder="Ej: Hola, me gustaría solicitar un presupuesto..." (input)="generateLink()"></textarea>
     </div>
 
     @if (generatedLink) {
-      <div class="result-box">
-        <label>Tu enlace generado:</label>
-        <div class="link-display">
-          <input type="text" [value]="generatedLink" readonly />
-          <button class="btn-copy" (click)="copyToClipboard()">
-            {{ copied ? '¡Copiado!' : 'Copiar Enlace' }}
-          </button>
-        </div>
+    <div class="result-box">
+      <label>Tu enlace generado:</label>
+      <div class="link-display">
+        <input type="text" [value]="generatedLink" readonly />
+        <button class="btn-copy" (click)="copyToClipboard()">
+          {{ copied ? '¡Copiado!' : 'Copiar Enlace' }}
+        </button>
       </div>
+    </div>
     }
   </div>
 
   <article class="seo-article">
     <h2>¿Por qué usar un enlace de WhatsApp en tu negocio local?</h2>
     <p>
-      En comercios y empresas locales de La Mancha, la rapidez de respuesta es clave para cerrar ventas. Reducir la fricción para que un cliente potencial te contacte directamente desde Instagram, Google Business Profile o Facebook aumenta las conversiones de forma directa.
+      En comercios y empresas locales de La Mancha, la rapidez de respuesta es clave para cerrar ventas. Reducir la
+      fricción para que un cliente potencial te contacte directamente desde Instagram, Google Business Profile o
+      Facebook aumenta las conversiones de forma directa.
     </p>
     <div class="cta-banner">
       <h3>¿Quieres automatizar los mensajes y pedidos que recibes?</h3>
       <p>En BaluArte Tech creamos sistemas que responden automáticamente a tus clientes y organizan tus pedidos.</p>
-      <a routerLink="/" class="btn-cta">Solicitar Diagnóstico Gratuito</a>
+      <app-cta-button>
+        Solicitar Diagnóstico Gratuito
+      </app-cta-button>
     </div>
   </article>
 </div>

@@ -1,1 +1,74 @@
-<p>data-cleaner works!</p>
+<div class="tool-wrapper">
+  <div class="tool-header">
+    <a routerLink="/herramientas" class="back-link">← Volver a Herramientas</a>
+    <h1>Limpiador y Formateador de Datos para Excel</h1>
+    <p>Pega tus listas o datos de Excel para eliminar espacios duplicados, limpiar líneas vacías, quitar duplicados y formatear texto al instante.</p>
+  </div>
+
+  <div class="tool-card">
+    <div class="form-group">
+      <label for="inputData">Pega tus datos aquí (Texto o columnas de Excel):</label>
+      <textarea
+        id="inputData"
+        [(ngModel)]="inputData"
+        (input)="cleanData()"
+        rows="6"
+        placeholder="Pega aquí los datos desordenados..."
+      ></textarea>
+    </div>
+
+    <div class="options-grid">
+      <label class="checkbox-label">
+        <input type="checkbox" [(ngModel)]="removeSpaces" (change)="cleanData()" />
+        Eliminar espacios extra y saltos internos
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" [(ngModel)]="removeEmptyLines" (change)="cleanData()" />
+        Eliminar líneas vacías
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" [(ngModel)]="removeDuplicates" (change)="cleanData()" />
+        Eliminar filas duplicadas
+      </label>
+
+      <div class="form-group inline-select">
+        <label for="caseTransform">Formato de texto:</label>
+        <select id="caseTransform" [(ngModel)]="caseTransform" (change)="cleanData()">
+          <option value="none">Sin cambios de mayúsculas</option>
+          <option value="upper">TODO MAYÚSCULAS</option>
+          <option value="lower">todo minúsculas</option>
+          <option value="capitalize">Capitalizar primera letra</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group" style="margin-top: 1.5rem;">
+      <label for="outputData">Resultado limpio:</label>
+      <textarea
+        id="outputData"
+        [value]="outputData"
+        readonly
+        rows="6"
+        placeholder="El resultado aparecerá aquí automáticamente..."
+      ></textarea>
+    </div>
+
+    @if (outputData) {
+      <div class="actions-row">
+        <button type="button" class="btn-copy" (click)="copyToClipboard()">Copiar resultado</button>
+      </div>
+    }
+  </div>
+
+  <article class="seo-article">
+    <h2>¿Trabajas a menudo con hojas de cálculo y tareas repetitivas?</h2>
+    <p>Automatizamos la limpieza, importación y procesamiento de tus datos en Excel o bases de datos para ahorrar horas de trabajo manual en tu negocio.</p>
+    <div class="cta-banner">
+      <app-cta-button whatsappMessage="Hola, me interesa automatizar el procesamiento de datos y hojas de cálculo para mi negocio.">
+        Solicitar Diagnóstico Gratuito
+      </app-cta-button>
+    </div>
+  </article>
+</div>

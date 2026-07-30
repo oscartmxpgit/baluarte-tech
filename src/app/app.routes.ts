@@ -48,6 +48,10 @@ export const routes: Routes = [
     path: 'herramientas/generador-qr-wifi',
     loadComponent: () => import('./pages/herramientas/wifi-qr-generator/wifi-qr-generator.component').then(m => m.WifiQrGeneratorComponent)
   },
+  {
+    path: 'herramientas/calculadora-margen-beneficio',
+    loadComponent: () => import('./pages/herramientas/margin-calculator/margin-calculator.component').then(m => m.MarginCalculatorComponent)
+  },
   // El comodín de página no encontrada SIEMPRE va al final
   {
     path: '**',

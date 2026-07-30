@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
+import { CtaButtonComponent } from '../../cta-button/cta-button.component';
 
 @Component({
   selector: 'app-commission-calculator',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, CtaButtonComponent],
   templateUrl: './commission-calculator.component.html',
   styleUrls: ['./commission-calculator.component.css']
 })

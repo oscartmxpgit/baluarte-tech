@@ -43,7 +43,7 @@
   margin-bottom: 0.5rem;
 }
 
-.form-group textarea,
+.form-group input,
 .form-group select {
   width: 100%;
   padding: 0.8rem;
@@ -51,52 +51,40 @@
   border-radius: 6px;
   font-size: 1rem;
   box-sizing: border-box;
-  font-family: inherit;
 }
 
-.options-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+.results-container {
   background: #f8fafc;
-  padding: 1rem;
-  border-radius: 8px;
   border: 1px solid #e2e8f0;
-  margin-top: 1rem;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.checkbox-label {
+.res-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  color: #334155;
-  cursor: pointer;
+  padding: 0.6rem 0;
+  color: #475569;
 }
 
-.inline-select {
-  grid-column: span 2;
-  margin-bottom: 0;
+.res-item.total {
+  border-top: 2px dashed #cbd5e1;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
 }
 
-.actions-row {
-  margin-top: 1rem;
-  text-align: right;
+.fee-text {
+  color: #059669;
 }
 
-.btn-copy {
-  background: #0f172a;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.btn-copy:hover {
-  background: #1e293b;
+.net-text {
+  color: #2563eb;
+  font-size: 1.3rem;
 }
 
 .seo-article {

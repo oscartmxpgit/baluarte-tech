@@ -1,19 +1,25 @@
 <nav class="navbar">
   <div class="navbar-container">
+    <!-- Izquierda: Logo -->
     <div class="brand-wrapper" routerLink="/">
       <app-logo variant="navbar"></app-logo>
     </div>
 
-    <div class="nav-links">
-      <a routerLink="/herramientas" routerLinkActive="active-link" class="nav-item">Herramientas Gratuitas</a>
-    </div>
+    <!-- Derecha: Menú + CTA Dinámico de Scroll -->
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a routerLink="/herramientas" routerLinkActive="active-link" class="nav-item">
+          Herramientas
+        </a>
+      </nav>
 
-    <div class="nav-actions">
-      @if (showMenuCta()) {
-        <app-cta-button variant="nav">
-          Diagnóstico gratuito
-        </app-cta-button>
-      }
+      <div class="nav-actions">
+        @if (showMenuCta()) {
+          <app-cta-button variant="nav">
+            Diagnóstico gratuito
+          </app-cta-button>
+        }
+      </div>
     </div>
   </div>
 </nav>

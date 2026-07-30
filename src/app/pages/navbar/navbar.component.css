@@ -18,6 +18,25 @@
   align-items: center; 
 }
 
+/* Contenedor del logo */
+.brand-wrapper { 
+  cursor: pointer; 
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.brand-wrapper:hover { 
+  opacity: 0.9; 
+}
+
+/* Bloque derecho: une enlaces y acciones dinámicas */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
 /* Links del Navbar */
 .nav-links {
   display: flex;
@@ -31,22 +50,32 @@
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s ease;
+  position: relative;
+  padding: 0.25rem 0;
 }
 
-.nav-item:hover, .active-link {
+.nav-item:hover, 
+.active-link {
   color: #2563eb;
 }
 
-/* Contenedor del logo */
-.brand-wrapper { 
-  cursor: pointer; 
-  transition: opacity 0.2s;
-  display: flex;
-  align-items: center;
+/* Subrayado indicador para la ruta activa */
+.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2563eb;
+  border-radius: 2px;
 }
 
-.brand-wrapper:hover { 
-  opacity: 0.9; 
+/* Acciones dinámicas (CTA que aparece al scroll) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  min-height: 40px; /* Evita colapsos de altura */
 }
 
 /* Botón CTA - Azul corporativo */

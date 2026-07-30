@@ -8,24 +8,13 @@
   <div class="tool-card">
     <div class="form-group">
       <label for="ssid">Nombre de la Red Wi-Fi (SSID):</label>
-      <input
-        type="text"
-        id="ssid"
-        [(ngModel)]="ssid"
-        placeholder="Ej: MiNegocio_Invitados"
-        (input)="generateQr()"
-      />
+      <input type="text" id="ssid" [(ngModel)]="ssid" placeholder="Ej: MiNegocio_Invitados" (input)="generateQr()" />
     </div>
 
     <div class="form-group">
       <label for="password">Contraseña de la Red:</label>
-      <input
-        type="text"
-        id="password"
-        [(ngModel)]="password"
-        placeholder="Ej: TuContraseñaSegura"
-        (input)="generateQr()"
-      />
+      <input type="text" id="password" [(ngModel)]="password" placeholder="Ej: TuContraseñaSegura"
+        (input)="generateQr()" />
     </div>
 
     <div class="form-group">
@@ -38,26 +27,29 @@
     </div>
 
     @if (qrImageUrl) {
-      <div class="result-box">
-        <h3>¡Tu código QR está listo!</h3>
-        <p>Escanéalo con la cámara de cualquier móvil para probarlo.</p>
-        <div class="qr-display">
-          <img [src]="qrImageUrl" alt="Código QR Wi-Fi" />
-        </div>
-        <a [href]="qrImageUrl" target="_blank" download="wifi-qr.png" class="btn-download">Descargar Imagen QR</a>
+    <div class="result-box">
+      <h3>¡Tu código QR está listo!</h3>
+      <p>Escanéalo con la cámara de cualquier móvil para probarlo.</p>
+      <div class="qr-display">
+        <img [src]="qrImageUrl" alt="Código QR Wi-Fi" />
       </div>
+      <a [href]="qrImageUrl" target="_blank" download="wifi-qr.png" class="btn-download">Descargar Imagen QR</a>
+    </div>
     }
   </div>
 
   <article class="seo-article">
     <h2>¿Por qué ofrecer Wi-Fi por código QR en tu local?</h2>
     <p>
-      Evita que los empleados pierdan tiempo dictando contraseñas largas y complejas. Un código QR impreso en las mesas mejora la experiencia del cliente y moderniza la imagen de tu establecimiento.
+      Evita que los empleados pierdan tiempo dictando contraseñas largas y complejas. Un código QR impreso en las mesas
+      mejora la experiencia del cliente y moderniza la imagen de tu establecimiento.
     </p>
     <div class="cta-banner">
       <h3>¿Necesitas digitalizar más procesos de tu negocio?</h3>
       <p>En BaluArte Tech creamos soluciones a medida para pequeños negocios y empresas locales.</p>
-      <a routerLink="/" class="btn-cta">Solicitar Diagnóstico Gratuito</a>
+      <app-cta-button>
+        Solicitar Diagnóstico Gratuito
+      </app-cta-button>
     </div>
   </article>
 </div>

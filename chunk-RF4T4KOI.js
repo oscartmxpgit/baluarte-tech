@@ -1,4 +1,4 @@
-import{S as i}from"./chunk-3V7XFFK5.js";var n=class e{printElement(r,o="Documento Oficial"){let t=window.open("","_blank","width=900,height=900");if(!t){alert("Por favor, permite las ventanas emergentes en tu navegador para poder imprimir.");return}let a=Array.from(document.querySelectorAll('style, link[rel="stylesheet"]')).map(l=>l.outerHTML).join(`
+import{S as i}from"./chunk-AUPDZCSV.js";var n=class e{printElement(r,o="Documento Oficial"){let t=window.open("","_blank","width=900,height=900");if(!t){alert("Por favor, permite las ventanas emergentes en tu navegador para poder imprimir.");return}let a=Array.from(document.querySelectorAll('style, link[rel="stylesheet"]')).map(l=>l.outerHTML).join(`
 `);t.document.write(`
       <!DOCTYPE html>
       <html lang="es">

@@ -7,6 +7,9 @@ import { PrintService } from '../../../services/print.service';
 interface DayRecord {
   dayName: string;
   dateStr: string;
+  entryTime: string;
+  exitTime: string;
+  breakTime: string;
 }
 
 @Component({
@@ -38,7 +41,10 @@ export class GeneradorRegistroHorarioComponent implements OnInit {
       const dateObj = new Date(2026, 6, i); // Julio 2026
       this.daysInMonth.push({
         dayName: days[dateObj.getDay()],
-        dateStr: `${i < 10 ? '0' + i : i}/07/2026`
+        dateStr: `${i < 10 ? '0' + i : i}/07/2026`,
+        entryTime: '08:00',
+        exitTime: '16:00',
+        breakTime: '1h'
       });
     }
   }

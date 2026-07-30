@@ -1,21 +1,45 @@
 <nav class="navbar">
   <div class="navbar-container">
     <!-- Izquierda: Logo -->
-    <div class="brand-wrapper" routerLink="/">
+    <div class="brand-wrapper" routerLink="/" (click)="closeMobileMenu()">
       <app-logo variant="navbar"></app-logo>
     </div>
 
-    <!-- Derecha: Menú + CTA Dinámico de Scroll -->
-    <div class="nav-right">
+    <!-- Botón Hamburguesa para Móvil -->
+    <button 
+      class="mobile-menu-toggle" 
+      (click)="toggleMobileMenu()" 
+      [attr.aria-expanded]="isMobileMenuOpen" 
+      aria-label="Toggle navigation">
+      <span class="bar" [class.open]="isMobileMenuOpen"></span>
+      <span class="bar" [class.open]="isMobileMenuOpen"></span>
+      <span class="bar" [class.open]="isMobileMenuOpen"></span>
+    </button>
+
+    <!-- Derecha: Menú + CTA Dinámico -->
+    <div class="nav-right" [class.mobile-open]="isMobileMenuOpen">
       <nav class="nav-links">
-        <a routerLink="/herramientas" routerLinkActive="active-link" class="nav-item">
+        <a 
+          routerLink="/" 
+          routerLinkActive="active-link" 
+          [routerLinkActiveOptions]="{ exact: true }" 
+          class="nav-item" 
+          (click)="closeMobileMenu()">
+          Inicio
+        </a>
+
+        <a 
+          routerLink="/herramientas" 
+          routerLinkActive="active-link" 
+          class="nav-item" 
+          (click)="closeMobileMenu()">
           Herramientas
         </a>
       </nav>
 
       <div class="nav-actions">
-        @if (showMenuCta()) {
-          <app-cta-button variant="nav">
+        @if (showMenuCta() || isMobileMenuOpen) {
+          <app-cta-button variant="nav" (click)="closeMobileMenu()">
             Diagnóstico gratuito
           </app-cta-button>
         }

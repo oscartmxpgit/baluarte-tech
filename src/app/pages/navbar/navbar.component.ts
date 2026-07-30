@@ -1,19 +1,37 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { UiService } from '../../services/ui.service';
 import { LogoComponent } from '../logo/logo.component';
 import { CtaButtonComponent } from '../cta-button/cta-button.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, LogoComponent, CtaButtonComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    RouterLinkActive,
+    LogoComponent,
+    CtaButtonComponent
+  ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  private uiService = inject(UiService);
+  public isMobileMenuOpen = false;
+  public showMenuCta = signal<boolean>(false);
 
-  public showMenuCta = toSignal(this.uiService.showCta$, { initialValue: false });
+  @HostListener('window:scroll', [])
+  public onWindowScroll(): void {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.showMenuCta.set(scrollPosition > 300);
+  }
+
+  public toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  public closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
 }

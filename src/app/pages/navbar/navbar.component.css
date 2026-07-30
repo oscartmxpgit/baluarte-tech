@@ -1,149 +1,131 @@
-/* Contenedor Glassmorphism */
-.navbar { 
-  position: sticky; 
-  top: 0; 
-  z-index: 50; 
-  background: rgba(255, 255, 255, 0.85); 
-  backdrop-filter: blur(12px); 
-  border-bottom: 1px solid rgba(226, 232, 240, 0.6); 
-  transition: background 0.3s ease;
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 1000;
+  width: 100%;
 }
 
-.navbar-container { 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0.8rem 2rem; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Contenedor del logo */
-.brand-wrapper { 
-  cursor: pointer; 
-  transition: opacity 0.2s;
+.brand-wrapper {
+  cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-.brand-wrapper:hover { 
-  opacity: 0.9; 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-/* Bloque derecho: une enlaces y acciones dinámicas */
-.nav-right {
+.nav-links {
   display: flex;
   align-items: center;
   gap: 1.75rem;
 }
 
-/* Links del Navbar */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
 .nav-item {
-  color: #334155;
   text-decoration: none;
-  font-weight: 600;
+  color: #475569;
+  font-weight: 500;
   font-size: 0.95rem;
   transition: color 0.2s ease;
-  position: relative;
-  padding: 0.25rem 0;
 }
 
-.nav-item:hover, 
+.nav-item:hover,
 .active-link {
   color: #2563eb;
 }
 
-/* Subrayado indicador para la ruta activa */
-.active-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #2563eb;
-  border-radius: 2px;
-}
-
-/* Acciones dinámicas (CTA que aparece al scroll) */
 .nav-actions {
   display: flex;
   align-items: center;
-  min-height: 40px; /* Evita colapsos de altura */
 }
 
-/* Botón CTA - Azul corporativo */
-.btn-nav-cta { 
-  background: #2563eb; 
-  color: white; 
-  padding: 0.55rem 1.25rem; 
-  border-radius: 6px; 
-  font-weight: 600; 
-  font-size: 0.9rem;
-  cursor: pointer; 
-  border: none; 
-  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 21px;
+  padding: 0;
+  z-index: 1001;
 }
 
-.btn-nav-cta:hover { 
-  background: #1d4ed8; 
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px -2px rgba(37, 99, 235, 0.3);
+.mobile-menu-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #1e293b;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.btn-nav-cta:active {
-  transform: translateY(0);
+/* Hamburger Animation */
+.mobile-menu-toggle .bar.open:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
 }
 
-.cart-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  padding: 8px;
-  color: #334155;
-  transition: color 0.2s ease;
+.mobile-menu-toggle .bar.open:nth-child(2) {
+  opacity: 0;
 }
 
-.cart-btn:hover {
-  color: #3b82f6;
+.mobile-menu-toggle .bar.open:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-.cart-icon {
-  width: 24px;
-  height: 24px;
-}
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
 
-.cart-badge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #14b8a6;
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 700;
-  border-radius: 9999px;
-  min-width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+  .nav-right {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+  }
 
-.animation-pulse {
-  animation: pop 0.3s ease-out;
-}
+  .nav-right.mobile-open {
+    right: 0;
+  }
 
-@keyframes pop {
-  0% { transform: scale(0.6); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-item {
+    font-size: 1.2rem;
+  }
+
+  .nav-actions {
+    display: flex;
+    justify-content: center;
+  }
 }

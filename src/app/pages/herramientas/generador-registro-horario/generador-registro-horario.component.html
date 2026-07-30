@@ -22,17 +22,17 @@
 
   <!-- VISTA DE IMPRESIÓN OFICIAL -->
   <div #printSection class="official-print-document">
-    <div class="doc-header" style="text-align: center; display: block;">
-      <h2 style="font-size: 1.3rem; margin-bottom: 2px;">REGISTRO DIARIO DE JORNADA LABORAL</h2>
-      <p style="margin-top: 4px; font-size: 0.85rem; color: #475569;">(Artículo 34.9 del Estatuto de los Trabajadores)</p>
+    <div class="doc-header">
+      <h2>REGISTRO DIARIO DE JORNADA LABORAL</h2>
+      <p>(Artículo 34.9 del Estatuto de los Trabajadores)</p>
     </div>
 
-    <div class="client-invoice-box" style="display: flex; justify-content: space-between;">
+    <div class="client-invoice-box info-box-flex">
       <div>
         <p><strong>Empresa:</strong> {{ companyName || 'Nombre Empresa' }} (CIF: {{ companyCif || 'Cif' }})</p>
         <p><strong>Trabajador:</strong> {{ employeeName || 'Nombre Empleado' }} (DNI: {{ employeeDni || 'DNI' }})</p>
       </div>
-      <div style="text-align: right;">
+      <div class="period-right">
         <p><strong>Período:</strong> {{ targetMonth || 'Mes / Año' }}</p>
       </div>
     </div>
@@ -52,19 +52,19 @@
         <tr *ngFor="let day of daysInMonth">
           <td>{{ day.dayName }}</td>
           <td>{{ day.dateStr }}</td>
-          <td class="text-center">08:00</td>
-          <td class="text-center">16:00</td>
-          <td class="text-center">1h</td>
+          <td class="text-center"><input type="text" [(ngModel)]="day.entryTime" class="table-inline-input" /></td>
+          <td class="text-center"><input type="text" [(ngModel)]="day.exitTime" class="table-inline-input" /></td>
+          <td class="text-center"><input type="text" [(ngModel)]="day.breakTime" class="table-inline-input" /></td>
           <td></td>
         </tr>
       </tbody>
     </table>
 
-    <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
-      <p style="font-size: 0.75rem; color: #475569;">El trabajador confirma la veracidad de las horas realizadas indicadas en este documento oficial.</p>
-      <div style="text-align: center; width: 180px;">
-        <p style="font-size: 0.8rem; margin-bottom: 2rem;">Firma del trabajador</p>
-        <div style="border-top: 1px solid #000;"></div>
+    <div class="signature-footer">
+      <p>El trabajador confirma la veracidad de las horas realizadas indicadas en este documento oficial.</p>
+      <div class="signature-box-print">
+        <p>Firma del trabajador</p>
+        <div class="sig-line"></div>
       </div>
     </div>
   </div>

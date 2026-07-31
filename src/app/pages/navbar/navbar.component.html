@@ -31,9 +31,18 @@
         <a 
           routerLink="/herramientas" 
           routerLinkActive="active-link" 
+          [routerLinkActiveOptions]="{ exact: true }"
           class="nav-item" 
           (click)="closeMobileMenu()">
           Herramientas
+        </a>
+
+        <a 
+          routerLink="/herramientas/business-engines" 
+          routerLinkActive="active-link" 
+          class="nav-item" 
+          (click)="closeMobileMenu()">
+          Hojas de Negocio
         </a>
       </nav>
 

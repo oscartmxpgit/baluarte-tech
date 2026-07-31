@@ -1,0 +1,145 @@
+<div class="hub-container">
+
+  <header class="hub-header">
+    <span class="badge-pro">BaluArte · Plantillas para Google Sheets</span>
+
+    <h1>Hojas de cálculo para empresas</h1>
+
+    <p>
+      Automatiza tareas, controla tu negocio y analiza tus datos con hojas de
+      cálculo profesionales listas para usar.
+    </p>
+  </header>
+
+  <!-- Filtros -->
+
+  <div class="hub-controls">
+
+    <div class="category-filters">
+
+      <button
+        class="filter-btn"
+        [class.active]="selectedCategory==='all'"
+        (click)="setCategory('all')">
+        Todas
+      </button>
+
+      <button
+        class="filter-btn"
+        [class.active]="selectedCategory==='finanzas'"
+        (click)="setCategory('finanzas')">
+        Finanzas
+      </button>
+
+      <button
+        class="filter-btn"
+        [class.active]="selectedCategory==='ventas'"
+        (click)="setCategory('ventas')">
+        Ventas
+      </button>
+
+      <button
+        class="filter-btn"
+        [class.active]="selectedCategory==='compras'"
+        (click)="setCategory('compras')">
+        Compras
+      </button>
+
+      <button
+        class="filter-btn"
+        [class.active]="selectedCategory==='produccion'"
+        (click)="setCategory('produccion')">
+        Producción
+      </button>
+
+      <button
+        class="filter-btn"
+        [class.active]="selectedCategory==='gestion'"
+        (click)="setCategory('gestion')">
+        Gestión
+      </button>
+
+    </div>
+
+    <div class="search-box">
+
+      <span class="search-icon">🔍</span>
+
+      <input
+        class="search-input"
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Buscar plantilla...">
+
+    </div>
+
+  </div>
+
+  <!-- Tarjetas -->
+
+  <div class="tools-grid"
+       *ngIf="filteredEngines.length; else noResults">
+
+    <article
+      class="tool-card"
+      *ngFor="let engine of filteredEngines">
+
+      <div class="card-top">
+
+        <div class="icon">
+          {{engine.icon}}
+        </div>
+
+        <span class="engine-badge">
+          Google Sheets
+        </span>
+
+      </div>
+
+      <h2>{{engine.title}}</h2>
+
+      <p>{{engine.description}}</p>
+
+      <a
+        class="btn-tool"
+        [href]="engine.spreadsheetUrl"
+        target="_blank"
+        rel="noopener">
+
+        Abrir plantilla
+
+      </a>
+
+    </article>
+
+  </div>
+
+  <!-- Sin resultados -->
+
+  <ng-template #noResults>
+
+    <div class="no-results-card">
+
+      <div class="no-results-icon">
+        📄
+      </div>
+
+      <h3>No hay resultados</h3>
+
+      <p>
+        No se ha encontrado ninguna plantilla con esos criterios.
+      </p>
+
+      <button
+        class="btn-reset"
+        (click)="selectedCategory='all';searchQuery=''">
+
+        Mostrar todas
+
+      </button>
+
+    </div>
+
+  </ng-template>
+
+</div>

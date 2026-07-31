@@ -105,6 +105,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/herramientas/calculadora-tarifa-hora/calculadora-tarifa-hora.component').then(m => m.CalculadoraTarifaHoraComponent),
     title: 'Calculadora de Tarifa por Hora para Autónomos | BaluArte Tech'
   },
+  {
+    path: 'herramientas/business-engines',
+    loadComponent: () => import('./pages/herramientas/business-engines-hub/business-engines-hub.component').then(m => m.BusinessEnginesHubComponent),
+    title: 'Business Engines y Mini-ERPs para Google Sheets | BaluArte Tech'
+  },
   // El comodín de página no encontrada SIEMPRE va al final
   {
     path: '**',
